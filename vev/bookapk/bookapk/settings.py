@@ -76,12 +76,12 @@ WSGI_APPLICATION = 'bookapk.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'school',
-        'USER': 'root',
-        'PASSWORD': '1247',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres.hmufhqplharkrwrytkgq',
+        'PASSWORD': 'Pneumon@1673',
+        'HOST': 'aws-0-eu-west-1.pooler.supabase.com',
+        'PORT': '6543',
     }
 }
 

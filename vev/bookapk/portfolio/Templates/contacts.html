@@ -39,6 +39,11 @@ background-position:center">
             <p id="HTex">
                 <b>GET IN TOUCH WITH MR CONTEH</b>
             </p>
+            {% if messages %}  
+                {% for item in messages %}
+    <p style="color:green; background-color:green;">{{ item }}</p>  
+{% endfor %}
+            {% endif %}
 
             <!-- NAME -->
             <div style="margin-bottom:10px; margin-top:20px;">
