@@ -16,19 +16,7 @@ def datar(request):
         data = intouch(name=name, phone=phone, email=email, message=message)
         data.save()
 
-        messages.success(request, 'Your message has been sent successfully!')
-
+        # messages.success(request, 'Your message has been sent successfully!')
         return redirect('contact')
 
-
-
-
-
-
-
-
-
-
-
-
-        
+    return redirect('contact')
