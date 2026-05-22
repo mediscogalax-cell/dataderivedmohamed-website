@@ -19,8 +19,8 @@ from django.urls import path,include
 from portfolio import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('',views.about, name='about'),
+       path('admin/', admin.site.urls),
       path('contact',views.contact, name='contact'),
         path('datar/',views.datar, name='datar'),
    
