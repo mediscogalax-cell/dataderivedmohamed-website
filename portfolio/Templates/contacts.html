@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>med.com</title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body style="background-color:black; 
+background-image: url('{% static 'images/bg.jpg' %}');
+background-size:cover;
+background-position:center">
+
+    <a href="{% url 'about' %}" style="position: ; color: white; text-decoration:none;
+     align-items:center;">  <b>Home</b></a>
+
+    <div id="menucon" style="display:flex; justify-content:center; align-items:center;">
+    </div>
+</header>
+
+<!-- ================= FORM ================= -->
+<form method="POST" action="/datar/">
+    {% csrf_token %}
+
+    <div style="width:device-width; height:800px; display:flex; justify-content:center; border:none; position:relative;">
+  <img src="{% static 'images/MAINLOGO.png' %}" id="mes">
+        <div id="ctmain"
+             style="display:flex; width:50%; position:fixed; flex-direction:column; align-items:center;
+             border:none ; margin-top:20px;margin-top:100px">
+
+            <!-- LOGO -->
+          
+
+            <!-- TITLE -->
+            <p id="HTex">
+                <b>GET IN TOUCH WITH MR CONTEH</b>
+            </p>
+            {% if messages %}  
+                {% for item in messages %}
+    <p style="color:green; background-color:green;">{{ item }}</p>  
+{% endfor %}
+            {% endif %}
+
+            <!-- NAME -->
+            <div style="margin-bottom:10px; margin-top:20px;">
+                <strong style="color:white; font-weight:bold;">Name:</strong>
+                <input type="text" name="name" placeholder="enter your name" required>
+            </div>
+
+            <!-- PHONE -->
+            <div style="margin-bottom:10px;">
+                <strong style="color:white;">Phone:</strong>
+                <input type="text" name="phone" placeholder="enter your phone" required>
+            </div>
+
+            <!-- EMAIL -->
+            <div style="margin-bottom:10px;">
+                <strong style="color:white;">Email:</strong>
+                <input type="text" name="email" placeholder="enter your email" required>
+            </div>
+
+            <!-- MESSAGE -->
+            <div>
+                <strong style="color:white;">Message:</strong>
+                <textarea name="message" cols="30" rows="5" placeholder="enter your message" required></textarea>
+            </div>
+
+            <!-- SUBMIT BUTTON -->
+            <button type="submit"
+                    style="color:black; background-color:green;
+                    height:40px; width:100px; border:none; border-radius:5px;margin-bottom:20px">
+                Submit
+            </button>
+
+        </div>
+    </div>
+</form>
+
+</body>
+</html>
