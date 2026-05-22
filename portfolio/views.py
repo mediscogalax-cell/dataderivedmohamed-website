@@ -1,11 +1,3 @@
-from django.shortcuts import render,HttpResponse,redirect
-from .models import intouch
-from django.contrib import messages 
-
-def about (request):
-    return render(request,'index.html')
-def contact (request):
-    return render(request,'contacts.html')
 def datar(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -17,18 +9,6 @@ def datar(request):
         data.save()
 
         messages.success(request, 'Your message has been sent successfully!')
-
         return redirect('contact')
 
-
-
-
-
-
-
-
-
-
-
-
-        
+    return redirect('contact')
