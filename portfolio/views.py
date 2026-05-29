@@ -2,8 +2,10 @@ from django.shortcuts import render,HttpResponse,redirect
 from .models import intouch
 from django.contrib import messages 
 
-def about (request):
+def home (request):
     return render(request,'index.html')
+def about (request):
+    return render(request,'about.html')
 def contact (request):
     return render(request,'contacts.html')
 def datar(request):

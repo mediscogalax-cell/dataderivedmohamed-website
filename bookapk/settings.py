@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 
+import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,11 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l6y81+u-!7+6=%kxa%jf-m-2a%e+tv%rqc16ffaf$8+m(5i#kc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = [
-    "dataderivedmohamed-website-1.onrender.com",
-    ".onrender.com",
-]
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,16 +75,9 @@ WSGI_APPLICATION = 'bookapk.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres.hmufhqplharkrwrytkgq',
-        'PASSWORD': 'Pneumon@1673',
-        'HOST': 'aws-0-eu-west-1.pooler.supabase.com',
-        'PORT': '6543',
-    }
-}
+
+
+
 
 
 # Password validation
