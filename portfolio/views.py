@@ -1,7 +1,10 @@
 from django.shortcuts import render,HttpResponse,redirect
 from .models import intouch
 from django.contrib import messages 
-
+from .forms import registerform
+from django.contrib.auth import login,logout,authenticate
+from django.contrib.auth.decorators import login_required
+@login_required(login_url="signup")
 def home (request):
     return render(request,'index.html')
 def about (request):
@@ -22,3 +25,17 @@ def datar(request):
         return redirect('contact')
 
     return redirect('contact')
+def signup(request):
+    if request.method=='POST':
+        form=registerform(request.POST)
+        if form.is_valid():
+            user=form.save()
+            return redirect('about/')
+    else:
+        form=registerform()
+    return render(request,'regsteration/signup.html',{'form':form})
+    redirect('home')
+
+
+
+
