@@ -4,7 +4,6 @@ from django.contrib import messages
 from .forms import registerform
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
-@login_required(login_url="signup")
 def home (request):
     return render(request,'index.html')
 def about (request):
