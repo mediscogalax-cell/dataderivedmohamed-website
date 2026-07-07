@@ -14,9 +14,17 @@
 background-image: url('{% static 'images/bg.jpg' %}');
 background-size:cover;
 background-position:center">
-
-    <a href="{% url 'about' %}" style="position: ; color: white; text-decoration:none;
-     align-items:center;">  <b>Home</b></a>
+   <a href="{% url 'home' %}" style="color:white; text-decoration:none; align-items:center;"><b>Home</b> </a>
+            <a href="{% url 'contact' %}" style="color:white; text-decoration:none; align-items:center;">
+                <b id="clink">Contact</b>
+                </a>
+        
+             <a href="{% url 'about' %}" style="color:white; text-decoration:none; align-items:center;">
+                <b id="clink">About</b>
+            </a>
+                 <a href="{% url 'signup' %}" style="color:white; text-decoration:none; align-items:center;">
+                <b id="clink">signup</b>
+            </a>
 
     <div id="menucon" style="display:flex; justify-content:center; align-items:center;">
     </div>

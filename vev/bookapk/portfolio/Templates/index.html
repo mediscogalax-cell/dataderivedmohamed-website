@@ -4,176 +4,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mohamedconteh.com</title>
+    <title>Medsite</title>
 
-    <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 
-<body>
+<body style="background: radial-gradient(circle at top right,#6abd05,#22193d);min-height:100vh;">
 
-<!-- HEADER -->
-<header style="position:relative; display:block;">
-    <div id="container1">
+<header>
 
-        <div id="menucon">
-            <a href="{% url 'contact' %}" style="color:white; text-decoration:none; align-items:center;">
-                <b id="clink">Contact</b>
+    <div id="containerhome">
+
+        <!-- Logo -->
+        <div style="display:flex;align-items:center;">
+
+            <b id="ltext"
+               style="
+               font-size:32px;
+               background:linear-gradient(90deg,#ff4d4d,#a855f7);
+               -webkit-background-clip:text;
+               -webkit-text-fill-color:transparent;
+               background-clip:text;
+               letter-spacing:1px;">
+                Medsite
+            </b>
+
+        </div>
+
+        <!-- Navigation -->
+
+        <nav style="display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;;">
+
+            <a href="{% url 'home' %}"
+               style="color:white;text-decoration:none;font-weight:600;">
+                Home
             </a>
 
-            <img src="{% static 'images/MAINLOGO.png' %}" id="mei">
-        </div>
+            <a href="{% url 'about' %}"
+               style="color:white;text-decoration:none;font-weight:600;">
+                About
+            </a>
 
-        <input type="text" placeholder="search about Mr. Conteh" id="s1" name="search">
+            <a href="{% url 'contact' %}"
+               style="color:white;text-decoration:none;font-weight:600;">
+                Contact
+            </a>
 
-        <div id="tcon">
-            <p id="time"></p>
-        </div>
+        </nav>
 
-        <script type="text/javascript" src="scripts.js"></script>
+        <!-- Button -->
+
+       
+
     </div>
+
 </header>
 
+<main style="max-width:1300px;margin:auto;padding:60px 30px;">
 
-<!-- MAIN CONTENT -->
-<main>
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:60px;
+flex-wrap:wrap;
+">
 
-    <!-- PROFILE IMAGE -->
-    <div style="display:flex; justify-content:center;margin-top:100px">
-        <img src="{% static 'images/med.jpeg' %}" id="profimg">
-    </div>
+<!-- LEFT -->
 
-    <h1 id="m1" style="text-transform:capitilize;">
-        <b>WELCOME TO MY WEBSITE</b>
-    </h1>
+<div style="flex:1;min-width:320px;">
 
+<p style="
+color:wheat;
+font-size:clamp(45px,6vw,70px);
+font-family:Georgia,'Times New Roman',Times,serif;
+margin:0;
+">
+HELLO!
+</p>
 
-    <!-- INTRO SECTION -->
-    <div id="introcon1">
-        <section id="intro">
-            <div class="introcon">
+<p style="
+color:white;
+font-size:clamp(40px,5vw,65px);
+font-weight:700;
+margin:10px 0 25px;
+line-height:1.2;
+">
+I AM MOHAMED CONTEH
+</p>
 
-                <p id="introtext" style="margin-top:0px;">
-                    I am Mohamed Conteh, a passionate web developer who builds dynamic and scalable web applications using 
-                    Python (Django), HTML, CSS, and JavaScript. I focus on creating clean backend systems and real-world solutions 
-                    with responsive design.
+<b id="ltext"
+style="
+font-size:clamp(20px,3vw,30px);
+background:linear-gradient(to right,#190490,#000,#ff0000);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
+">
 
-                    I develop secure authentication systems, manage databases using MySQL,
-                    and build user-friendly dashboards that solve real problems.
+A DEDICATED FULL STACK WEB DEVELOPER
 
-                    I am always improving my software development skills to create more efficient and innovative web applications.
-                </p>
+</b>
 
-            </div>
-        </section>
-    </div>
+<br><br><br>
 
+<a href="{% url 'about' %}">
 
-    <!-- PROJECTS SECTION -->
-    <section>
-        <p id="SH" style="color:gold;"><b>PROJECTS</b></p>
+<input
+type="button"
+id="btn2"
+value="Read More"
 
-        <div style="display:flex; flex-direction:row; gap:20px; flex-wrap:wrap; justify-content:center; align-items:center;">
+style="
+height:48px;
+width:140px;
+border:none;
+border-radius:30px;
+background:#00a651;
+color:white;
+font-weight:bold;
+cursor:pointer;
+">
 
-            <!-- PROJECT 1 -->
-            <div id="c1" style="max-width:400px; background:white; border-radius:20px;">
-                <img src="{% static 'images/restu.jpg' %}" alt="restaurant image"
-                     style="max-width:400px; height:285px; border-radius:10px;">
+</a>
 
-                <div style="max-width:400px;">
-                    <p style="margin-top:0px; text-align:justify; font-size:20px;">
-                        I deployed a scalable restaurant management system using <em>Python (Django)</em>, <em>JavaScript</em>, 
-                        <em>HTML & CSS</em>, and <em>PostgreSQL</em>. This system helps restaurants manage operations such as orders, 
-                        menu updates, customer records, and payments.
-                    </p>
-                </div>
+</div>
 
-                <div style="display:flex; justify-content:center;">
-                    <button style="margin-bottom:20px; height:40px; border-radius:10px; background-color:green;">
-                        <a href="https://github.com" style="text-decoration:none; font-weight:bold; color:white;">GITHUB</a>
-                    </button>
-                </div>
-            </div>
+<!-- RIGHT -->
 
+<div style="
+flex:1;
+display:flex;
+justify-content:center;
+min-width:300px;
+">
 
-            <!-- PROJECT 2 -->
-            <div id="c1" style="max-width:400px; background:white; border-radius:20px;">
-                <img src="{% static 'images/OFFICE.jpg' %}" alt="office image"
-                     style="max-width:400px; height:320px; border-radius:10px;">
+<img
+src="{% static 'images/myphoto.jpg' %}"
 
-                <div style="max-width:400px;">
-                    <p style="margin-top:0px; text-align:justify; font-size:20px;">
-                        I created a scalable office management system using <em>Python (Django)</em>, <em>JavaScript</em>, 
-                        <em>HTML & CSS</em>, and <em>PostgreSQL</em>. It manages employee records, attendance, tasks, and communication.
-                    </p>
-                </div>
+style="
+width:100%;
+max-width:420px;
+height:auto;
+border-radius:25px;
+object-fit:cover;
+box-shadow:0 20px 60px rgba(0,0,0,.35);
+">
 
-                <div style="display:flex; justify-content:center;">
-                    <button style="margin-bottom:20px; height:40px; border-radius:10px; background-color:green;">
-                        <a href="https://github.com" style="text-decoration:none; font-weight:bold; color:white;">GITHUB</a>
-                    </button>
-                </div>
-            </div>
+</div>
 
-
-            <!-- PROJECT 3 -->
-            <div id="c1" style="max-width:400px; background:white; border-radius:20px;">
-                <img src="{% static 'images/busm.jpg' %}" alt="business image"
-                     style="max-width:400px; height: 320px;px; border-radius:10px;">
-
-                <div style="max-width:400px;">
-                    <p style="margin-top:0px; text-align:justify; font-size:20px;">
-                        I developed a scalable business management system using <em>Python (Django)</em>, <em>JavaScript</em>, 
-                        <em>HTML & CSS</em>, and <em>PostgreSQL</em>. It handles sales, inventory, customers, and financial reporting.
-                    </p>
-                </div>
-
-                <div style="display:flex; justify-content:center;">
-                    <button style="margin-bottom:20px; height:40px; border-radius:10px; background-color:green;">
-                        <a href="https://github.com" style="text-decoration:none; font-weight:bold; color:white;">GITHUB</a>
-                    </button>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- CORE SKILLS -->
-    <section>
-        <p style="color:gold; text-align:center; font-weight:bold; font-size:40px;">
-            CORE SKILLS
-        </p>
-
-        <div style="display:flex; justify-content:center; background:white; border-radius:20px;">
-            <ul id="cktext" style="font-size:25px; text-align:justify;">
-                <li>Full-stack Web Development: <em>Python (Django), JavaScript, HTML & CSS</em></li>
-                <li>Database Management: <em>MySQL</em></li>
-                <li>Version Control: <em>Git and GitHub</em></li>
-                <li><b>Adaptability:</b> Quick learner in dynamic environments</li>
-                <li>Microsoft Office & internet troubleshooting skills</li>
-                <li><b>Problem-solving:</b> Strong analytical thinking</li>
-            </ul>
-        </div>
-    </section>
-
-
-    <!-- EDUCATION -->
-    <section>
-        <div style="display: flex;flex-direction:row;align-items:center;justify-content:center;">
-            
-            <img src="{%static  'images/gcap.png'%}" style="width: 100px;height:80px;display:inline">
-        <p style="color:white; text-align:center; font-weight:bold; font-size:40px;">
-            EDUCATION
-        </p>
-        <
-        </div>
-    </section>
-
-
-    <!-- FOOTER -->
-    <section>
-    </section>
+</div>
 
 </main>
 

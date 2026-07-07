@@ -9,10 +9,6 @@ class intouch(models.Model):
         def __str__(self):
                 return 'message from '+self.name+'-'+self.email
                 
-class customer(models.Model):
-        name=models.CharField(max_length=100)
-        phone=models.CharField(max_length=20)
-        email=models.EmailField(default='email@example.com')
 
         def __str__(self):
              return 'customer: '+self.name+'-'+self.email
