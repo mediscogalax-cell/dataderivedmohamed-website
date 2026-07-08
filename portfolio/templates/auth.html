@@ -880,7 +880,7 @@ OR CREATE ACCOUNT
 
 
 
-
+{% if request.user.is_authenticated and request.user.groups.all.0.name == "Head" %}
 
 <!-- SIGNUP -->
 
