@@ -1,163 +1,747 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medsite</title>
 
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Medsite</title>
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+<style>
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle at top right,#6abd05,#22193d,#111);
+
+    font-family:
+    Arial, Helvetica, sans-serif;
+
+}
+
+
+
+/* ================= NAVBAR ================= */
+
+
+#containerhome{
+
+
+    width:100%;
+
+    height:75px;
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+
+    padding:0 50px;
+
+
+    background:
+
+    rgba(17,17,17,.55);
+
+
+    backdrop-filter:blur(15px);
+
+
+    border-bottom:
+
+    1px solid rgba(255,255,255,.2);
+
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+
+}
+
+
+
+#ltext{
+
+
+    font-size:34px;
+
+    font-weight:900;
+
+
+    background:
+
+    linear-gradient(
+    90deg,
+    gold,
+    #6abd05,
+    white
+    );
+
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+
+}
+
+
+
+nav{
+
+
+    display:flex;
+
+    gap:35px;
+
+
+}
+
+
+
+nav a{
+
+
+    color:white;
+
+    text-decoration:none;
+
+
+    font-size:18px;
+
+    font-weight:bold;
+
+
+    position:relative;
+
+    transition:.4s;
+
+
+}
+
+
+
+nav a:hover{
+
+
+    color:gold;
+
+
+    transform:translateY(-3px);
+
+
+}
+
+
+nav a::after{
+
+
+    content:"";
+
+    position:absolute;
+
+
+    width:0;
+
+    height:3px;
+
+
+    background:gold;
+
+
+    bottom:-8px;
+
+    left:0;
+
+
+    transition:.4s;
+
+
+}
+
+
+
+nav a:hover::after{
+
+
+    width:100%;
+
+
+}
+
+
+
+
+
+/* ================= HERO ================= */
+
+
+
+.hero{
+
+
+    max-width:1300px;
+
+    margin:auto;
+
+
+    padding:80px 40px;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    gap:70px;
+
+
+    flex-wrap:wrap;
+
+
+}
+
+
+
+
+
+.hero-left{
+
+
+    flex:1;
+
+    min-width:320px;
+
+
+}
+
+
+
+
+/* HELLO FIXED */
+
+
+.hello-box{
+
+
+    height:90px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+}
+
+
+
+.hello{
+
+
+    color:wheat;
+
+
+    font-size:
+
+    clamp(45px,6vw,70px);
+
+
+    font-family:
+
+    Georgia,serif;
+
+
+    animation:
+
+    fadeHello 3s infinite;
+
+
+}
+
+
+
+
+@keyframes fadeHello{
+
+
+0%{
+
+opacity:0;
+
+}
+
+
+
+50%{
+
+opacity:1;
+
+}
+
+
+
+100%{
+
+opacity:0;
+
+}
+
+
+}
+
+
+
+
+.hero-title{
+
+
+    color:white;
+
+
+    font-size:
+
+    clamp(40px,5vw,65px);
+
+
+    font-weight:800;
+
+
+    margin:20px 0;
+
+
+    line-height:1.2;
+
+
+}
+
+
+
+
+.hero-role{
+
+
+    font-size:
+
+    clamp(20px,3vw,30px);
+
+
+    font-weight:bold;
+
+
+    background:
+
+    linear-gradient(
+    90deg,
+    #190490,
+    white,
+    red
+    );
+
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+
+}
+
+
+
+
+
+/* ================= BUTTON ================= */
+
+
+
+#btn2{
+
+
+    margin-top:40px;
+
+
+    height:50px;
+
+
+    width:160px;
+
+
+    border:none;
+
+
+    border-radius:30px;
+
+
+    background:
+
+    linear-gradient(
+    45deg,
+    #00a651,
+    #6abd05
+    );
+
+
+    color:white;
+
+
+    font-size:17px;
+
+
+    font-weight:bold;
+
+
+    cursor:pointer;
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+
+#btn2:hover{
+
+
+    transform:
+
+    translateY(-8px)
+    scale(1.08);
+
+
+    background:
+
+    linear-gradient(
+    45deg,
+    gold,
+    #00a651
+    );
+
+
+    box-shadow:
+
+    0 20px 40px rgba(255,215,0,.5);
+
+
+}
+
+
+
+
+
+
+
+/* ================= IMAGE ================= */
+
+
+
+.hero-right{
+
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+
+    min-width:300px;
+
+
+}
+
+
+
+
+
+.hero-image{
+
+
+    width:420px;
+
+    height:420px;
+
+
+    object-fit:cover;
+
+
+    border-radius:30px;
+
+
+    border:
+
+    5px solid gold;
+
+
+    box-shadow:
+
+    0 20px 60px rgba(0,0,0,.5);
+
+
+    transition:.5s;
+
+
+}
+
+
+
+
+.hero-image:hover{
+
+
+    transform:
+
+    scale(1.08)
+    rotate(3deg);
+
+
+    box-shadow:
+
+    0 30px 90px rgba(255,215,0,.7);
+
+
+}
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:800px){
+
+
+#containerhome{
+
+
+    padding:0 20px;
+
+    flex-direction:column;
+
+    height:auto;
+
+    gap:20px;
+
+    padding-top:20px;
+
+    padding-bottom:20px;
+
+
+}
+
+
+nav{
+
+
+    gap:20px;
+
+}
+
+
+
+.hero{
+
+
+    text-align:center;
+
+    justify-content:center;
+
+}
+
+
+.hero-right{
+
+
+    margin-top:30px;
+
+
+}
+
+
+.hero-image{
+
+
+    width:280px;
+
+    height:280px;
+
+
+}
+
+
+
+}
+
+
+</style>
+
 </head>
 
-<body style="background: radial-gradient(circle at top right,#6abd05,#22193d);min-height:100vh;">
+
+<body>
+
+
 
 <header>
 
-    <div id="containerhome">
 
-        <!-- Logo -->
-        <div style="display:flex;align-items:center;">
+<div id="containerhome">
 
-            <b id="ltext"
-               style="
-               font-size:32px;
-               background:linear-gradient(90deg,#ff4d4d,#a855f7);
-               -webkit-background-clip:text;
-               -webkit-text-fill-color:transparent;
-               background-clip:text;
-               letter-spacing:1px;">
-                Medsite
-            </b>
 
-        </div>
+<div>
 
-        <!-- Navigation -->
+<b id="ltext">
+Medsite
+</b>
 
-        <nav style="display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;;">
+</div>
 
-            <a href="{% url 'home' %}"
-               style="color:white;text-decoration:none;font-weight:600;">
-                Home
-            </a>
 
-            <a href="{% url 'about' %}"
-               style="color:white;text-decoration:none;font-weight:600;">
-                About
-            </a>
 
-            <a href="{% url 'contact' %}"
-               style="color:white;text-decoration:none;font-weight:600;">
-                Contact
-            </a>
+<nav>
 
-        </nav>
 
-        <!-- Button -->
+<a href="{% url 'home' %}">
+Home
+</a>
 
-       
 
-    </div>
+<a href="{% url 'about' %}">
+About
+</a>
+
+
+<a href="{% url 'contact' %}">
+Contact
+</a>
+
+
+</nav>
+
+
+</div>
+
 
 </header>
 
-<main style="max-width:1300px;margin:auto;padding:60px 30px;">
 
-<div style="
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:60px;
-flex-wrap:wrap;
-">
 
-<!-- LEFT -->
 
-<div style="flex:1;min-width:320px;">
 
-<p style="
-color:wheat;
-font-size:clamp(45px,6vw,70px);
-font-family:Georgia,'Times New Roman',Times,serif;
-margin:0;
-">
+<main>
+
+
+<section class="hero">
+
+
+
+<div class="hero-left">
+
+
+
+<div class="hello-box">
+
+<p class="hello">
 HELLO!
 </p>
 
-<p style="
-color:white;
-font-size:clamp(40px,5vw,65px);
-font-weight:700;
-margin:10px 0 25px;
-line-height:1.2;
-">
-I AM MOHAMED CONTEH
-</p>
+</div>
 
-<b id="ltext"
-style="
-font-size:clamp(20px,3vw,30px);
-background:linear-gradient(to right,#190490,#000,#ff0000);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-background-clip:text;
-">
+
+
+
+<h1 class="hero-title">
+
+I AM MOHAMED CONTEH
+
+</h1>
+
+
+
+
+<p class="hero-role">
 
 A DEDICATED FULL STACK WEB DEVELOPER
 
-</b>
+</p>
 
-<br><br><br>
+
+
 
 <a href="{% url 'about' %}">
 
 <input
-type="button"
-id="btn2"
-value="Read More"
 
-style="
-height:48px;
-width:140px;
-border:none;
-border-radius:30px;
-background:#00a651;
-color:white;
-font-weight:bold;
-cursor:pointer;
-">
+type="button"
+
+id="btn2"
+
+value="Read More">
 
 </a>
 
+
+
+
 </div>
 
-<!-- RIGHT -->
 
-<div style="
-flex:1;
-display:flex;
-justify-content:center;
-min-width:300px;
-">
+
+
+
+<div class="hero-right">
+
 
 <img
+
 src="{% static 'images/myphoto.jpg' %}"
 
-style="
-width:100%;
-max-width:420px;
-height:auto;
-border-radius:25px;
-object-fit:cover;
-box-shadow:0 20px 60px rgba(0,0,0,.35);
-">
+class="hero-image">
+
 
 </div>
 
-</div>
+
+
+</section>
+
 
 </main>
 
+
+
 <script src="{% static 'scripts.js' %}"></script>
 
+
 </body>
+
 </html>
