@@ -4,24 +4,22 @@ body {
 }
 
 #container1 {
-    position: fixed;
+    position: ;
     top: 0;
     left: 0;
     right: 0;
-    width: 100%;
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color:background-color:rgb(17, 17, 17,0.2);
     min-height: 50px;
-    border: ;
-    box-sizing: border-box;
     z-index: 1000;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
 #containerhome {
-    position:fixed;
+    position:;
     background-color:rgb(17, 17, 17,0.7);
     width: 100%;
     display: flex;
@@ -49,7 +47,7 @@ body {
 }
 
 #profimg {
-    width: 150px;
+    width: 50px;
     height: 150px;
     margin-top: 10px;
     border-radius: 5px;

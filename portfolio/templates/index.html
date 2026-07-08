@@ -4,86 +4,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mysite</title>
+    <title>Medsite</title>
+
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 
-<body style="background: radial-gradient(circle at right, #6abd05, #22193d);height: 1000px;">
+<body style="background: radial-gradient(circle at top right,#6abd05,#22193d);min-height:100vh;">
 
 <header>
+
     <div id="containerhome">
 
-    
+        <!-- Logo -->
+        <div style="display:flex;align-items:center;">
 
-            <!-- Logo -->
-             <div style="display: flex;" >
-        
-                <b id="ltext" style=" font-size:30px; background: linear-gradient(to right, red, #a855f7);
-            -webkit-background-clip: text;
-             -webkit-text-fill-color: transparent;
-            background-clip: text;
-   ">
-   Medsite
-</b>
-</div>
-                
+            <b id="ltext"
+               style="
+               font-size:32px;
+               background:linear-gradient(90deg,#ff4d4d,#a855f7);
+               -webkit-background-clip:text;
+               -webkit-text-fill-color:transparent;
+               background-clip:text;
+               letter-spacing:1px;">
+                Medsite
+            </b>
 
-            <!-- Navigation -->
-            <div>
-                <a href="{% url 'home' %}" style="color:white; text-decoration:none; align-items:center;">
-                    <b>Home</b>
-                </a>
-                <a href="{% url 'about' %}" style="color:white; text-decoration:none; align-items:center;">
-                    <b id="clink">About</b>
-                </a>
-                <a href="{% url 'contact' %}" style="color:white; text-decoration:none; align-items:center;">
-                    <b id="clink">Contact</b>
-                </a>
+        </div>
 
-               
-            </div>
+        <!-- Navigation -->
 
+        <nav style="display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;;">
 
-            <!-- Button -->
+            <a href="{% url 'home' %}"
+               style="color:white;text-decoration:none;font-weight:600;">
+                Home
+            </a>
 
-                <button id="btn1"
-                        style="height:40px; width:100px; border-radius:20px;
-                        border:none; background-color:#c8f04a;">
-                    let talk
-                </button>
+            <a href="{% url 'about' %}"
+               style="color:white;text-decoration:none;font-weight:600;">
+                About
+            </a>
 
+            <a href="{% url 'contact' %}"
+               style="color:white;text-decoration:none;font-weight:600;">
+                Contact
+            </a>
 
-    
+        </nav>
+
+        <!-- Button -->
+
+       
 
     </div>
+
 </header>
-<main>
-    <div style="display: flex;flex-direction:row;justify-content:space-between;flex-wrap:wrap;">
-    <div style="margin-top:80px;" >
-        <p style=" color: wheat;font-size:70px;font-family:Georgia, 'Times New Roman', Times, serif;display:inline" >HELLO!<br> </p>
-         <p style="color: wheat;font-size:xx-large;font-size:70px;position:relative;display:inline"> I AM MOHAMED CONTEH </p><BR>
-         
-               <b id="ltext" style="padding-top:200px; font-size:30px; background: linear-gradient(to left, rgb(25, 4, 144), #0a0a0a,rgb(249, 6, 6));
-            -webkit-background-clip: text;
-             -webkit-text-fill-color: transparent;
-            background-clip: text;
-   ">
-   A DEDICATED FULL STACK WEB DEVELOPER
+
+<main style="max-width:1300px;margin:auto;padding:60px 30px;">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:60px;
+flex-wrap:wrap;
+">
+
+<!-- LEFT -->
+
+<div style="flex:1;min-width:320px;">
+
+<p style="
+color:wheat;
+font-size:clamp(45px,6vw,70px);
+font-family:Georgia,'Times New Roman',Times,serif;
+margin:0;
+">
+HELLO!
+</p>
+
+<p style="
+color:white;
+font-size:clamp(40px,5vw,65px);
+font-weight:700;
+margin:10px 0 25px;
+line-height:1.2;
+">
+I AM MOHAMED CONTEH
+</p>
+
+<b id="ltext"
+style="
+font-size:clamp(20px,3vw,30px);
+background:linear-gradient(to right,#190490,#000,#ff0000);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
+">
+
+A DEDICATED FULL STACK WEB DEVELOPER
+
 </b>
 
+<br><br><br>
 
- </div>          
-<div style="margin-top:40px;">
-     <img src="{%static 'images/busm.jpg' %} " style="positon:fixed;   height:400px;max-width: 400px;border-radius: 10%;margin-top: 50px;">
-</div>
-    </div>
-    <a href="{% url 'about' %}">
-    <input type="button" id="btn2" value="Read More" style="height:40PX;width:100px; border-radius:20px;border:none;background-color:green;margin-left:20px;">
+<a href="{% url 'about' %}">
+
+<input
+type="button"
+id="btn2"
+value="Read More"
+
+style="
+height:48px;
+width:140px;
+border:none;
+border-radius:30px;
+background:#00a651;
+color:white;
+font-weight:bold;
+cursor:pointer;
+">
+
 </a>
+
+</div>
+
+<!-- RIGHT -->
+
+<div style="
+flex:1;
+display:flex;
+justify-content:center;
+min-width:300px;
+">
+
+<img
+src="{% static 'images/myphoto.jpg' %}"
+
+style="
+width:100%;
+max-width:420px;
+height:auto;
+border-radius:25px;
+object-fit:cover;
+box-shadow:0 20px 60px rgba(0,0,0,.35);
+">
+
+</div>
+
+</div>
+
 </main>
-
-
-
 
 <script src="{% static 'scripts.js' %}"></script>
 
