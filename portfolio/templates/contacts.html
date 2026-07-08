@@ -3,90 +3,775 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>med.com</title>
 
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | Mohamed Conteh</title>
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.65),
+    rgba(0,0,0,.65)
+    ),
+    url("{% static 'images/bg.jpg' %}");
+
+    background-size:cover;
+
+    background-position:center;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+
+
+/* ================= NAVBAR ================= */
+
+
+header{
+
+    width:100%;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    z-index:1000;
+
+}
+
+
+.navbar{
+
+
+    width:100%;
+
+    padding:20px 50px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:35px;
+
+
+    background:
+
+    rgba(17,17,17,.55);
+
+
+    backdrop-filter:blur(15px);
+
+
+    border-bottom:
+
+    1px solid rgba(255,255,255,.2);
+
+
+}
+
+
+
+.navbar a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+    position:relative;
+
+}
+
+
+
+.navbar a:hover{
+
+    color:gold;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+.navbar a::after{
+
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:3px;
+
+    background:gold;
+
+    bottom:-8px;
+
+    left:0;
+
+    transition:.3s;
+
+}
+
+
+.navbar a:hover::after{
+
+    width:100%;
+
+}
+
+
+
+
+
+/* ================= FORM AREA ================= */
+
+
+.contact-container{
+
+
+    min-height:100vh;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    padding-top:100px;
+
+
+}
+
+
+
+.contact-box{
+
+
+    width:450px;
+
+
+    padding:40px;
+
+
+    background:
+
+
+    rgba(255,255,255,.12);
+
+
+    backdrop-filter:blur(20px);
+
+
+    border-radius:30px;
+
+
+    border:1px solid rgba(255,255,255,.25);
+
+
+    box-shadow:
+
+
+    0 20px 60px rgba(0,0,0,.6);
+
+
+
+}
+
+
+
+
+/* LOGO */
+
+
+#mes{
+
+
+    width:120px;
+
+    height:120px;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:auto;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+#HTex{
+
+
+    color:gold;
+
+
+    text-align:center;
+
+
+    font-size:25px;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+/* SUCCESS MESSAGE */
+
+
+.message-box{
+
+
+    background:
+
+    linear-gradient(
+    45deg,
+    #00a651,
+    #6abd05
+    );
+
+
+    color:white;
+
+
+    padding:15px;
+
+
+    text-align:center;
+
+
+    border-radius:30px;
+
+
+    font-weight:bold;
+
+
+    margin-bottom:20px;
+
+
+    animation:showMessage .5s ease;
+
+
+}
+
+
+
+
+
+@keyframes showMessage{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(-20px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+.hide-message{
+
+
+    opacity:0;
+
+    transform:translateY(-20px);
+
+    transition:.5s;
+
+
+}
+
+
+
+
+/* INPUTS */
+
+
+.form-group{
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+.form-group label{
+
+
+    color:white;
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:bold;
+
+
+}
+
+
+
+input,
+textarea{
+
+
+    width:100%;
+
+
+    padding:12px 18px;
+
+
+    border:none;
+
+
+    outline:none;
+
+
+    border-radius:25px;
+
+
+    font-size:16px;
+
+
+}
+
+
+
+textarea{
+
+
+    border-radius:20px;
+
+    resize:none;
+
+
+}
+
+
+
+
+
+/* BUTTON */
+
+
+button{
+
+
+    width:150px;
+
+
+    height:45px;
+
+
+    border:none;
+
+
+    border-radius:30px;
+
+
+    background:
+
+    linear-gradient(
+    45deg,
+    #6abd05,
+    #00a651
+    );
+
+
+    color:white;
+
+
+    font-weight:bold;
+
+
+    cursor:pointer;
+
+
+    display:block;
+
+
+    margin:auto;
+
+
+    transition:.4s;
+
+
+}
+
+
+
+button:hover{
+
+
+    transform:
+
+    translateY(-5px)
+    scale(1.05);
+
+
+    box-shadow:
+
+    0 15px 30px rgba(0,255,100,.4);
+
+
+}
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:600px){
+
+
+.navbar{
+
+
+    gap:15px;
+
+    padding:20px;
+
+
+}
+
+
+.navbar a{
+
+
+    font-size:15px;
+
+
+}
+
+
+
+.contact-box{
+
+
+    width:90%;
+
+    padding:30px;
+
+
+}
+
+
+
+#HTex{
+
+
+    font-size:20px;
+
+
+}
+
+
+}
+
+
+
+
+</style>
+
+
 </head>
 
-<body style="background-color:black; 
-background-image: url('{% static 'images/bg.jpg' %}');
-background-size:cover;
-background-position:center">
-   <a href="{% url 'home' %}" style="color:white; text-decoration:none; align-items:center;"><b>Home</b> </a>
-            <a href="{% url 'contact' %}" style="color:white; text-decoration:none; align-items:center;">
-                <b id="clink">Contact</b>
-                </a>
-        
-             <a href="{% url 'about' %}" style="color:white; text-decoration:none; align-items:center;">
-                <b id="clink">About</b>
-            </a>
-                 <a href="{% url 'signup' %}" style="color:white; text-decoration:none; align-items:center;">
-                <b id="clink">signup</b>
-            </a>
 
-    <div id="menucon" style="display:flex; justify-content:center; align-items:center;">
-    </div>
+
+<body>
+
+
+
+<header>
+
+<div class="navbar">
+
+
+<a href="{% url 'home' %}">
+Home
+</a>
+
+
+<a href="{% url 'contact' %}">
+Contact
+</a>
+
+
+<a href="{% url 'about' %}">
+About
+</a>
+
+
+<a href="{% url 'auth_page' %}">
+signup  
+</a>
+<a href="{% url 'logout' %}">
+            Logout
+</a>
+
+</div>
+
+
 </header>
 
-<!-- ================= FORM ================= -->
+
+
+
+
+<div class="contact-container">
+
+
 <form method="POST" action="/datar/">
-    {% csrf_token %}
 
-    <div style="width:device-width; height:800px; display:flex; justify-content:center; border:none; position:relative;">
-  <img src="{% static 'images/MAINLOGO.png' %}" id="mes">
-        <div id="ctmain"
-             style="display:flex; width:50%; position:fixed; flex-direction:column; align-items:center;
-             border:none ; margin-top:20px;margin-top:100px">
 
-            <!-- LOGO -->
-          
+{% csrf_token %}
 
-            <!-- TITLE -->
-            <p id="HTex">
-                <b>GET IN TOUCH WITH MR CONTEH</b>
-            </p>
-            {% if messages %}  
-                {% for item in messages %}
-    <p style="color:green; background-color:green;">{{ item }}</p>  
+
+
+<div class="contact-box">
+
+
+
+<img 
+src="{% static 'images/MAINLOGO.png' %}" 
+id="mes">
+
+
+
+
+
+<p id="HTex">
+
+<b>GET IN TOUCH WITH MR CONTEH</b>
+
+</p>
+
+
+
+
+
+{% if messages %}
+
+{% for item in messages %}
+
+
+<div id="success-message" class="message-box">
+
+{{ item }}
+
+</div>
+
+
 {% endfor %}
-            {% endif %}
 
-            <!-- NAME -->
-            <div style="margin-bottom:10px; margin-top:20px;">
-                <strong style="color:white; font-weight:bold;">Name:</strong>
-                <input type="text" name="name" placeholder="enter your name" required>
-            </div>
+{% endif %}
 
-            <!-- PHONE -->
-            <div style="margin-bottom:10px;">
-                <strong style="color:white;">Phone:</strong>
-                <input type="text" name="phone" placeholder="enter your phone" required>
-            </div>
 
-            <!-- EMAIL -->
-            <div style="margin-bottom:10px;">
-                <strong style="color:white;">Email:</strong>
-                <input type="text" name="email" placeholder="enter your email" required>
-            </div>
 
-            <!-- MESSAGE -->
-            <div>
-                <strong style="color:white;">Message:</strong>
-                <textarea name="message" cols="30" rows="5" placeholder="enter your message" required></textarea>
-            </div>
 
-            <!-- SUBMIT BUTTON -->
-            <button type="submit"
-                    style="color:black; background-color:green;
-                    height:40px; width:100px; border:none; border-radius:5px;margin-bottom:20px">
-                Submit
-            </button>
 
-        </div>
-    </div>
+
+<div class="form-group">
+
+
+<label>Name</label>
+
+
+<input 
+type="text"
+name="name"
+placeholder="Enter your name"
+required>
+
+
+</div>
+
+
+
+
+
+
+<div class="form-group">
+
+
+<label>Phone</label>
+
+
+<input 
+type="text"
+name="phone"
+placeholder="Enter your phone"
+required>
+
+
+</div>
+
+
+
+
+
+
+<div class="form-group">
+
+
+<label>Email</label>
+
+
+<input 
+type="email"
+name="email"
+placeholder="Enter your email"
+required>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="form-group">
+
+
+<label>Message</label>
+
+
+<textarea
+name="message"
+rows="5"
+placeholder="Enter your message"
+required></textarea>
+
+
+</div>
+
+
+
+
+
+
+
+<button type="submit">
+
+Submit
+
+</button>
+
+
+
+
+</div>
+
+
 </form>
 
+
+</div>
+
+
+
+
+
+<script>
+
+
+setTimeout(function(){
+
+
+let message=document.getElementById("success-message");
+
+
+if(message){
+
+
+message.classList.add("hide-message");
+
+
+
+setTimeout(function(){
+
+
+message.remove();
+
+
+},500);
+
+
+
+}
+
+
+},5000);
+
+
+
+</script>
+
+
+
 </body>
+
 </html>

@@ -33,6 +33,330 @@ body{
     Arial, Helvetica, sans-serif;
 
 }
+/* ================= PREMIUM FOOTER ================= */
+
+
+#footer{
+
+    width:100%;
+
+    margin-top:100px;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #111,
+    #22193d
+    );
+
+    color:white;
+
+    padding:60px 40px 20px;
+
+    box-shadow:
+
+    0 -20px 50px rgba(0,0,0,.4);
+
+}
+
+
+
+#footer-container{
+
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:50px;
+
+    flex-wrap:wrap;
+
+
+}
+
+
+
+
+/* BRAND */
+
+
+#footer-brand{
+
+    max-width:350px;
+
+}
+
+
+
+#footer-brand h2{
+
+    font-size:40px;
+
+    margin:0 0 20px;
+
+    color:gold;
+
+}
+
+
+
+#footer-brand h2 span{
+
+    color:#6abd05;
+
+}
+
+
+
+#footer-brand p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:white;
+
+}
+
+
+
+
+
+/* EMAIL */
+
+
+#footer-email h3,
+#social h3{
+
+
+    color:gold;
+
+    font-size:26px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+#footer-email p{
+
+    font-size:17px;
+
+}
+
+
+
+
+#email-box{
+
+
+    display:flex;
+
+    margin-top:20px;
+
+
+}
+
+
+
+#email-box input{
+
+
+    width:250px;
+
+    height:45px;
+
+
+    border:none;
+
+    outline:none;
+
+
+    padding:0 18px;
+
+
+    border-radius:30px 0 0 30px;
+
+
+    font-size:16px;
+
+
+}
+
+
+
+#email-box button{
+
+
+    height:45px;
+
+
+    padding:0 25px;
+
+
+    border:none;
+
+
+    background:#6abd05;
+
+
+    color:white;
+
+
+    font-weight:bold;
+
+
+    border-radius:0 30px 30px 0;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+#email-box button:hover{
+
+
+    background:#00a651;
+
+
+    transform:scale(1.05);
+
+
+}
+
+
+
+
+
+
+
+/* SOCIAL ICONS */
+
+
+#social-icons{
+
+
+    display:flex;
+
+
+    gap:20px;
+
+
+    margin-top:25px;
+
+
+}
+
+
+
+
+#social-icons a{
+
+
+    width:55px;
+
+
+    height:55px;
+
+
+    background:white;
+
+
+    border-radius:50%;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+#social-icons img{
+
+
+    width:30px;
+
+    height:30px;
+
+    object-fit:contain;
+
+
+}
+
+
+
+#social-icons a:hover{
+
+
+    transform:
+
+    translateY(-10px)
+
+    scale(1.15);
+
+
+    box-shadow:
+
+    0 15px 35px gold;
+
+
+}
+
+
+
+/* ================= PREMIUM FOOTER ================= */
+
+
+#footer{
+
+    width:100%;
+
+    margin-top:100px;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #0f172a,
+    #1e293b,
+    #312e81
+    );
+
+    color:white;
+
+    padding:60px 40px 20px;
+
+    box-shadow:
+
+    0 -20px 50px rgba(0,0,0,.5);
+
+}
 
 
 
@@ -40,7 +364,6 @@ body{
 
 
 #containerhome{
-
 
     width:100%;
 
@@ -59,7 +382,7 @@ body{
 
     background:
 
-    rgba(17,17,17,.55);
+    rgba(17,17,17,.75);
 
 
     backdrop-filter:blur(15px);
@@ -70,11 +393,15 @@ body{
     1px solid rgba(255,255,255,.2);
 
 
-    position:sticky;
+    position:fixed;
 
     top:0;
 
+    left:0;
+
     z-index:1000;
+
+
 
 
 }
@@ -643,7 +970,19 @@ About
 <a href="{% url 'contact' %}">
 Contact
 </a>
+<a href="{% url 'logout' %}">
+            Logout
+</a>
+<a href="{% url 'auth_page' %}">
+Login
+</a>
+{% if user.is_authenticated %}
 
+<a href="{% url 'dashboard' %}">
+    Dashboard
+</a>
+
+{% endif %}
 
 </nav>
 
@@ -740,6 +1079,149 @@ class="hero-image">
 
 
 <script src="{% static 'scripts.js' %}"></script>
+<footer id="footer">
+
+
+<div id="footer-container">
+
+
+
+<!-- BRAND -->
+
+<div id="footer-brand">
+
+
+<h2>
+Mohamed<span>Conteh</span>
+</h2>
+
+
+<p>
+
+Full Stack Django Developer creating
+modern, scalable and responsive web applications.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<!-- EMAIL -->
+
+<div id="footer-email">
+
+
+<h3>
+Stay Connected
+</h3>
+
+
+<p>
+Subscribe for updates and new projects.
+</p>
+
+
+
+<div id="email-box">
+
+
+<input 
+type="email"
+placeholder="Enter your email">
+
+
+
+<button>
+Subscribe
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- SOCIAL -->
+
+<div id="social">
+
+
+<h3>
+Follow Me
+</h3>
+
+
+<div id="social-icons">
+
+
+<a href="#" title="Facebook">
+
+<img src="{% static 'images/facebook.png' %}">
+
+</a>
+
+
+
+<a href="#" title="WhatsApp">
+
+<img src="{% static 'images/whatsapp.svg' %}">
+
+</a>
+
+
+
+
+<a href="#" title="YouTube">
+
+<img src="{% static 'images/youtube.svg' %}">
+
+</a>
+
+
+
+
+<a href="#" title="LinkedIn">
+
+<img src="{% static 'images/link.svg' %}">
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div id="footer-bottom">
+
+
+<p>
+© 2026 Mohamed Conteh. All Rights Reserved.
+</p>
+
+
+</div>
+
+
+</footer>
 
 
 </body>

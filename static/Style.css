@@ -3,23 +3,11 @@ body {
     background:radial-gradient(circle at center,#3d2019,rgb(230, 4, 166));
 }
 
-#container1 {
-    position: ;
-    top: 0;
-    left: 0;
-    right: 0;
-    max-width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color:background-color:rgb(17, 17, 17,0.2);
-    min-height: 50px;
-    z-index: 1000;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
 #containerhome {
-    position:;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
     background-color:rgb(17, 17, 17,0.7);
     width: 100%;
     display: flex;
