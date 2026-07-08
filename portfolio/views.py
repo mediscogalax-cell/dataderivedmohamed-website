@@ -124,7 +124,7 @@ def signin(request):
 # =========================
 
 
-
+@login_required(login_url='home')
 def signup(request):
 
     if request.method == "POST":
