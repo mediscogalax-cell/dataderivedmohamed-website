@@ -64,8 +64,11 @@ def datar(request):
 
 # SINGLE AUTH PAGE
 def auth_page(request):
+    is_head = request.user.groups.filter(name="Head").exists()
 
-    return render(request,"auth.html")
+    return render(request, "auth.html", {
+        "is_head": is_head
+    })
 
 
 
