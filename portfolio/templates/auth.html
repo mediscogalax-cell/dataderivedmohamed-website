@@ -869,7 +869,7 @@ LOGIN
 
 
 
-
+{% if is_head %}
 
 <div class="divider">
 
@@ -877,19 +877,15 @@ OR CREATE ACCOUNT
 
 </div>
 
-
 <!-- SIGNUP -->
-
-<!-- ================= PREMIUM SIGNUP ================= -->
 
 <form method="POST" action="{% url 'signup' %}" class="signup-form">
 
 {% csrf_token %}
 
-
 <div class="input-box">
 
-<input 
+<input
 type="text"
 name="username"
 placeholder="Username"
@@ -897,11 +893,9 @@ required>
 
 </div>
 
-
-
 <div class="input-box">
 
-<input 
+<input
 type="email"
 name="email"
 placeholder="Email Address"
@@ -909,11 +903,9 @@ required>
 
 </div>
 
-
-
 <div class="input-box">
 
-<input 
+<input
 type="password"
 name="password1"
 placeholder="Password"
@@ -921,11 +913,9 @@ required>
 
 </div>
 
-
-
 <div class="input-box">
 
-<input 
+<input
 type="password"
 name="password2"
 placeholder="Confirm Password"
@@ -933,19 +923,12 @@ required>
 
 </div>
 
-
-
 <button type="submit">
 
 CREATE ACCOUNT
 
 </button>
 
-
-
 </form>
 
-
-</body>
-
-</html>
+{% endif %}
